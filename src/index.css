@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-primary: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", sans-serif;
+  --font-secondary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00fff0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cce6;
+}
+
+/* Selection styles */
+::selection {
+  background: #00fff0;
+  color: #0f0f0f;
+}
+
+/* Focus styles */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #00fff0;
+  outline-offset: 2px;
+}
+
+/* Utility classes */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* Custom components */
+.btn-primary {
+  @apply bg-accent-blue text-primary-dark hover:bg-accent-blue/90 px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-accent-purple text-white hover:bg-accent-purple/90 px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-accent-blue to-accent-purple bg-clip-text text-transparent;
+}
+
+.bg-gradient {
+  @apply bg-gradient-to-r from-accent-blue to-accent-purple;
+}
+
+
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Loading states */
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    color: black !important;
+    background: white !important;
+  }
+}
+
+/* HighlightCarousel.jsx */
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+.parallax__layer {
+  will-change: transform;
+  transition: transform 0.3s ease-out;
+}
+
+
+/* Responsiveness */
+
+@media (max-width: 530px) {
+  .xs\:max-w-xs { max-width: 18rem; }
+  .xs\:p-4 { padding: 1rem !important; }
+  .xs\:text-center { text-align: center !important; }
+  .xs\:text-base { font-size: 1rem !important; }
+  .xs\:text-sm { font-size: 0.875rem !important; }
+  .xs\:mb-2 { margin-bottom: 0.5rem !important; }
+  .xs\:font-semibold { font-weight: 600 !important; }
+  .xs\:leading-tight { line-height: 1.25 !important; }
+}
