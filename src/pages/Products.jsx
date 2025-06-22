@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import { HiFilter, HiSearch } from 'react-icons/hi';
+import Input from '../components/ui/Input';
 import FadeInWhenVisible from '../components/animations/FadeInWhenVisible';
 
 const Products = () => {
@@ -119,7 +121,7 @@ const Products = () => {
               <div className="flex-1">
                 <div className="relative">
                   <HiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                  <input
+                  <Input
                     type="text"
                     placeholder="Search products..."
                     value={searchTerm}
