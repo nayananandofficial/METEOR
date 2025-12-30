@@ -106,7 +106,7 @@ body {
 
 /* Custom components */
 .btn-primary {
-  @apply bg-accent-blue text-primary-dark hover:bg-accent-blue/90 px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105;
+  @apply bg-cta-primary text-primary-dark hover:bg-cta-primary/90 px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105;
 }
 
 .btn-secondary {
@@ -199,3 +199,55 @@ body {
   .xs\:font-semibold { font-weight: 600 !important; }
   .xs\:leading-tight { line-height: 1.25 !important; }
 }
+
+/* Draggable Button */
+/* Container */
+.shimmer-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Base readable text */
+.shimmer-base {
+  color: rgba(136, 136, 136, 0.9);
+}
+
+/* Moving highlight layer */
+.shimmer-overlay {
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  background-image: linear-gradient(
+    110deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.9) 50%,
+    transparent 60%
+  );
+  background-size: 230% 100%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  pointer-events: none;
+  animation: letter-shimmer 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Dark mode */
+.dark .shimmer-base {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dark .shimmer-overlay {
+  background-image: linear-gradient(
+    110deg,
+    transparent 40%,
+    rgba(0, 0, 0, 0.85) 50%,
+    transparent 60%
+  );
+}
+
+@keyframes letter-shimmer {
+  to {
+    background-position: -250% 0%;
+  }
+}
+

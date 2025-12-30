@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { forwardRef } from 'react';
 
 const buttonVariants = {
-  filled: 'bg-gradient text-primary-dark hover:bg-accent-blue/90 focus:ring-accent-blue/50',
+  filled: 'btn-primary dark: text-primary-dark hover:bg-accent-blue/90 focus:ring-accent-blue/50',
   ghost: 'text-accent-blue hover:bg-accent-blue/10 focus:ring-accent-blue/50',
   outline: 'border-2 border-sky-900 text-sky-800 dark:border-sky-600 dark:text-sky-500 hover:bg-accent-purple/30  hover:text-primary-dark focus:ring-accent-blue/50',
   secondary: 'bg-accent-purple text-white hover:bg-accent-purple/90 focus:ring-accent-purple/50',
