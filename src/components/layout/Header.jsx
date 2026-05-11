@@ -12,6 +12,7 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // The header starts transparent over hero sections, then gains contrast on scroll.
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -28,6 +29,7 @@ const Header = () => {
     { name: 'Contact', href: '/contact' },
   ];
 
+  // Exact matching keeps `/products` and `/products/:id` visually distinct.
   const isActive = (href) => location.pathname === href;
 
   return (
@@ -125,6 +127,7 @@ const Header = () => {
                         ? 'text-accent-blue'
                         : 'text-gray-700 dark:text-gray-300'
                     }`}
+                    // Close before route paint so the drawer does not flash on the next page.
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}

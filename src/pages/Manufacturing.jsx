@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { HiPlay, HiCheckCircle, HiShieldCheck, HiGlobe, HiLightningBolt } from 'react-icons/hi';
-import { FaLeaf, FaRecycle, FaCertificate, FaIndustry } from 'react-icons/fa';
+import { HiPlay, HiCheckCircle, HiGlobe, HiLightningBolt } from 'react-icons/hi';
+import { FaLeaf, FaRecycle, FaCertificate } from 'react-icons/fa';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import CountingNumber from '../components/animations/CountingNumber';
@@ -117,6 +117,8 @@ const Manufacturing = () => {
     }
   ];
 
+  const activeProcessStep = processSteps[activeProcess];
+
   return (
     <div className="min-h-screen py-24">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -208,18 +210,19 @@ const Manufacturing = () => {
                 transition={{ duration: 0.3 }}
               >
                 <Card className="overflow-hidden">
+                  {/* Resolve the active step once so the detail panel reads cleanly. */}
                   <img
-                    src={processSteps[activeProcess].image}
-                    alt={processSteps[activeProcess].title}
+                    src={activeProcessStep.image}
+                    alt={activeProcessStep.title}
                     loading='lazy'
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-4">
-                      {processSteps[activeProcess].title}
+                      {activeProcessStep.title}
                     </h3>
                     <ul className="space-y-2">
-                      {processSteps[activeProcess].details.map((detail, index) => (
+                      {activeProcessStep.details.map((detail, index) => (
                         <li key={index} className="flex items-center space-x-2">
                           <HiCheckCircle className="text-accent-blue flex-shrink-0" size={16} />
                           <span className="text-sm text-gray-600 dark:text-gray-400">
@@ -296,7 +299,7 @@ const Manufacturing = () => {
               Sustainable Manufacturing
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              We're committed to responsible manufacturing that protects our planet 
+              We are committed to responsible manufacturing that protects our planet
               while delivering exceptional products.
             </p>
           </FadeInWhenVisible>

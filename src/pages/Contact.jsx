@@ -40,15 +40,17 @@ const Contact = () => {
     {
       icon: HiMail,
       title: 'Email Us',
-      details: ['hello@techcorp.com', 'We respond within 24 hours'],
+      details: ['hello@meteor.com', 'We respond within 24 hours'],
     },
   ];
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    setFormData((currentFormData) => ({
+      ...currentFormData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -60,6 +62,7 @@ const Contact = () => {
   };
 
   const nextStep = () => {
+    // Clamp the flow so the step counter and progress bar stay aligned.
     if (currentStep < 3) setCurrentStep(currentStep + 1);
   };
 
@@ -79,7 +82,7 @@ const Contact = () => {
             <HiCheckCircle className="mx-auto text-6xl text-green-500 mb-6" />
             <h1 className="text-4xl font-bold mb-4">Thank You!</h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              Your message has been sent successfully. We'll get back to you within 24 hours.
+              Your message has been sent successfully. We will get back to you within 24 hours.
             </p>
             <Button variant='link' onClick={() => window.location.reload()}>
               Send Another Message
@@ -99,8 +102,8 @@ const Contact = () => {
             Get In Touch
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Ready to transform your business? Let's discuss how our solutions 
-            can help you achieve your goals.
+            Ready to plan your next build or launch? Let us discuss which METEOR
+            products fit your goals.
           </p>
         </FadeInWhenVisible>
 
@@ -110,7 +113,7 @@ const Contact = () => {
             <FadeInWhenVisible>
               <h2 className="text-2xl font-bold mb-8">Contact Information</h2>
               <div className="space-y-6">
-                {contactInfo.map((info, index) => (
+                {contactInfo.map((info) => (
                   <Card key={info.title} className="p-6">
                     <div className="flex items-start space-x-4">
                       <info.icon className="mt-1" size={24} />

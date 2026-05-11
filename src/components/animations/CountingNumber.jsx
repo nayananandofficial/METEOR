@@ -23,6 +23,7 @@ const CountingNumber = ({
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
       
+      // Ease-out feels more natural for headline metrics than a linear counter.
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       setCurrent(Math.floor(easeOutQuart * (end - start) + start));
       

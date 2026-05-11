@@ -7,6 +7,7 @@ import Footer from './Footer';
 
 const Layout = () => {
   useEffect(() => {
+    // Initialize AOS once at the shell level so routed pages share one config.
     AOS.init({
       duration: 800,
       easing: 'ease-in-out',

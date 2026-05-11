@@ -110,19 +110,19 @@ const OurStory = () => {
     {
       name: 'Emily Johnson',
       position: 'Senior Engineer',
-      quote: 'Working at TechCorp means being part of something bigger. Every day, we\'re solving problems that matter.',
+      quote: 'Working at METEOR means being part of something bigger. Every day, we are solving problems that matter.',
       image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=200'
     },
     {
       name: 'David Kim',
       position: 'Product Manager',
-      quote: 'The innovation culture here is incredible. We\'re encouraged to think big and take calculated risks.',
+      quote: 'The innovation culture here is incredible. We are encouraged to think big and take calculated risks.',
       image: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=200'
     },
     {
       name: 'Maria Santos',
       position: 'Manufacturing Lead',
-      quote: 'Our commitment to sustainability isn\'t just talk - it\'s embedded in everything we do.',
+      quote: 'Our commitment to sustainability is not just talk - it is embedded in everything we do.',
       image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=200'
     }
   ];
@@ -133,6 +133,9 @@ const OurStory = () => {
     { label: 'Patents Filed', value: 75, suffix: '+' },
     { label: 'Countries Served', value: 50, suffix: '+' }
   ];
+
+  // Resolve the selected timeline entry once so the detail panel avoids repeated finds.
+  const activeTimelineItem = timeline.find((item) => item.year === activeYear);
 
   return (
     <div className="min-h-screen py-24">
@@ -214,21 +217,21 @@ const OurStory = () => {
               >
                 <Card className="overflow-hidden">
                   <img
-                    src={timeline.find(t => t.year === activeYear)?.image}
-                    alt={timeline.find(t => t.year === activeYear)?.title}
+                    src={activeTimelineItem?.image}
+                    alt={activeTimelineItem?.title}
                     loading='lazy'
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-6">
                     <h3 className="text-2xl font-bold mb-4">
-                      {timeline.find(t => t.year === activeYear)?.title}
+                      {activeTimelineItem?.title}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-6">
-                      {timeline.find(t => t.year === activeYear)?.description}
+                      {activeTimelineItem?.description}
                     </p>
                     <h4 className="font-semibold mb-3">Key Achievements:</h4>
                     <ul className="space-y-2">
-                      {timeline.find(t => t.year === activeYear)?.achievements.map((achievement, index) => (
+                      {activeTimelineItem?.achievements.map((achievement, index) => (
                         <li key={index} className="flex items-center space-x-2">
                           <FaAward className="text-accent-blue flex-shrink-0" size={16} />
                           <span className="text-sm text-gray-600 dark:text-gray-400">
@@ -327,7 +330,7 @@ const OurStory = () => {
                 <Card className="p-6 h-full">
                   <FaQuoteLeft className="text-accent-blue mb-4" size={24} />
                   <p className="text-gray-600 dark:text-gray-400 mb-6 italic">
-                    "{testimonial.quote}"
+                    <span>&ldquo;{testimonial.quote}&rdquo;</span>
                   </p>
                   <div className="flex items-center space-x-3">
                     <img

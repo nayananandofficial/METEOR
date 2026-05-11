@@ -4,23 +4,23 @@ import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   const footerLinks = {
-    'Products': [
-      { name: 'Industrial Robotics', href: '/products/robotics' },
-      { name: 'Automation Systems', href: '/products/automation' },
-      { name: 'IoT Solutions', href: '/products/iot' },
-      { name: 'AI Platform', href: '/products/ai' },
+    Products: [
+      { name: 'CPU Processors', href: '/products' },
+      { name: 'GPU Graphics', href: '/products' },
+      { name: 'AI Platforms', href: '/products' },
+      { name: 'Manufacturing', href: '/manufacturing' },
     ],
-    'Company': [
-      { name: 'About Us', href: '/our-story' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'News', href: '/news' },
-      { name: 'Sustainability', href: '/sustainability' },
-    ],
-    'Support': [
-      { name: 'Documentation', href: '/docs' },
-      { name: 'Help Center', href: '/help' },
+    Company: [
+      { name: 'Home', href: '/' },
+      { name: 'Our Story', href: '/our-story' },
+      { name: 'Manufacturing', href: '/manufacturing' },
       { name: 'Contact', href: '/contact' },
-      { name: 'Status', href: '/status' },
+    ],
+    Support: [
+      { name: 'Product Catalog', href: '/products' },
+      { name: 'Contact Sales', href: '/contact' },
+      { name: 'Brand Story', href: '/our-story' },
+      { name: 'Factory Overview', href: '/manufacturing' },
     ],
   };
 
@@ -35,21 +35,18 @@ const Footer = () => {
     <footer className="bg-white dark:bg-primary-dark border-t border-gray-200/20 dark:border-gray-800/50">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="relative w-10 h-10">
-                {/* METEOR Logo - Enhanced footer version */}
-              </div>
+              <div className="relative w-10 h-10" />
               <span className="text-xl font-bold text-gray-900 dark:text-white tracking-wider">
                 METEOR
               </span>
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md">
-              Leading the future of industrial technology with innovative solutions 
-              that transform manufacturing and automation processes worldwide.
+              METEOR showcases a fictional lineup of processors, graphics cards,
+              and AI platforms built for performance-focused product storytelling.
             </p>
-            
+
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
                 <HiLocationMarker className="text-accent-blue" size={20} />
@@ -66,7 +63,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
               <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
@@ -88,13 +84,12 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-gray-200/20 dark:border-gray-800/50">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              © 2024 METEOR. All rights reserved.
+              Copyright 2024 METEOR. All rights reserved.
             </p>
-            
+
             <div className="flex items-center space-x-6 mt-4 sm:mt-0">
               {socialLinks.map((social) => {
                 const Icon = social.icon;

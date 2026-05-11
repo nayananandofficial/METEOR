@@ -4,6 +4,7 @@ import { useRef } from 'react';
 
 const FadeInWhenVisible = ({ children, className = '', delay = 0 }) => {
   const ref = useRef(null);
+  // `once` avoids replaying the entrance animation during scroll back.
   const isInView = useInView(ref, { once: true });
 
   return (

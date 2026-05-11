@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import { HiFilter, HiSearch } from 'react-icons/hi';
+import { HiSearch } from 'react-icons/hi';
 import Input from '../components/ui/Input';
 import FadeInWhenVisible from '../components/animations/FadeInWhenVisible';
 
@@ -84,6 +84,9 @@ const Products = () => {
     },
   ];
 
+  const parsePrice = (price) => parseInt(price.replace(/[^0-9]/g, ''), 10);
+
+  // Filter first so the sort only touches the visible subset.
   const filteredProducts = products
     .filter(product => 
       (selectedCategory === 'all' || product.category === selectedCategory) &&
@@ -92,7 +95,7 @@ const Products = () => {
     .sort((a, b) => {
       switch (sortBy) {
         case 'price':
-          return parseInt(a.price.replace(/[^0-9]/g, '')) - parseInt(b.price.replace(/[^0-9]/g, ''));
+          return parsePrice(a.price) - parsePrice(b.price);
         case 'name':
         default:
           return a.name.localeCompare(b.name);

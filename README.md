@@ -1,10 +1,27 @@
-![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/nayananandofficial/METEOR?utm_source=oss&utm_medium=github&utm_campaign=nayananandofficial%2FMETEOR&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+# METEOR
 
-# React + Vite
+METEOR is a marketing site built with React.js for an enterprise high-performance computing brand. The app presents a landing page, product catalog, detail pages, manufacturing story, brand story, and contact flow for METEOR processors, graphics cards, and AI platforms.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Stack
 
-Currently, two official plugins are available:
+- React 18
+- Vite 5
+- Tailwind CSS 3
+- Framer Motion
+- React Router DOM
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Scripts
+
+- `npm run dev` starts the local development server
+- `npm run build` creates a production build in `dist/`
+- `npm run lint` runs ESLint across the project
+- `npm run preview` serves the production build locally
+
+## Routes
+
+- `/`
+- `/products`
+- `/products/:id`
+- `/manufacturing`
+- `/our-story`
+- `/contact`

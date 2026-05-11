@@ -5,6 +5,7 @@ const useIsDesktop = (breakpoint = 768) => {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    // Run after mount so static render paths never touch `window`.
     const check = () => setIsDesktop(window.innerWidth >= breakpoint);
     check(); // initial run
     window.addEventListener("resize", check);

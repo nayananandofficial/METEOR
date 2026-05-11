@@ -239,7 +239,7 @@ const ProductDetailPage = () => {
     }
   };
 
-  // Get related products (exclude current product)
+  // Reuse the same catalog object so list and detail cards stay in sync.
   const getRelatedProducts = (currentId) => {
     return Object.values(products)
       .filter(product => product.productId !== currentId)
@@ -255,6 +255,7 @@ const ProductDetailPage = () => {
 
   const product = products[id];
 
+  // Invalid ids fall back to the catalog instead of rendering an empty detail shell.
   if (!product) {
     return <Navigate to="/products" replace />;
   }
