@@ -1,6 +1,27 @@
-# METEOR
+# ☄️ METEOR | Enterprise HPC Solutions
 
-METEOR is a marketing site built with React.js for an enterprise high-performance computing brand. The app presents a landing page, product catalog, detail pages, manufacturing story, brand story, and contact flow for METEOR processors, graphics cards, and AI platforms.
+![METEOR Onboarding Demo](./public/METEOR.gif)
+
+METEOR is a high-performance marketing site built for an enterprise computing brand. It features a streamlined product catalog, immersive brand storytelling, and high-fidelity motion design. The app presents:
+
+- landing page
+- product catalog
+- detail pages
+- manufacturing story
+- brand story
+- contact flow
+
+for METEOR processors, graphics cards, and AI platforms.
+
+## 🚀 Experience the Project
+
+**Live Demo:** [Link to your Netlify URL]
+
+### Features
+
+- **Dynamic Catalog:** Full product routing for processors and AI platforms.
+- **Brand Storytelling:** Custom manufacturing and brand narrative layouts.
+- **Fluid Motion:** Powered by Framer Motion for a premium enterprise feel.
 
 ## Stack
 
@@ -10,12 +31,21 @@ METEOR is a marketing site built with React.js for an enterprise high-performanc
 - Framer Motion
 - React Router DOM
 
-## Scripts
+## 🛠️ Local Setup
 
-- `npm run dev` starts the local development server
-- `npm run build` creates a production build in `dist/`
-- `npm run lint` runs ESLint across the project
-- `npm run preview` serves the production build locally
+To run this project locally, ensure you have **Node.js** installed.
+
+1. **Clone the repo:**
+   `git clone [your-repo-link]`
+
+2. **Install dependencies:**
+   `npm install`
+
+3. **Start development:**
+   `npm run dev`
+
+4. **Production Preview:**
+   `npm run build && npm run preview`
 
 ## Routes
 
