@@ -1,6 +1,8 @@
 # ☄️ METEOR | Enterprise HPC Solutions
 
-![METEOR Onboarding Demo](./public/METEOR.gif)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0041107b-64fd-4788-8789-fd8f2f88fe6f" width="800" alt="METEOR Onboarding Demo" />
+</p>
 
 METEOR is a high-performance marketing site built for an enterprise computing brand. It features a streamlined product catalog, immersive brand storytelling, and high-fidelity motion design. The app presents:
 
